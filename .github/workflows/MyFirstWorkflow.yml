@@ -1,5 +1,7 @@
 name: First Workflow
 on:
+  schedule:
+    - cron: '0 0 1 */3 *'
   push:
     branches:
       - main
@@ -18,3 +20,5 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
+
+      - run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
