@@ -1,8 +1,11 @@
 name: First Workflow
 on:
+  pull_request_target:
+  
   push:
     branches:
       - main
+      
   workflow_dispatch:
 
 permissions:
